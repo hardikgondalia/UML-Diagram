@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   }
 
   addBlock(type, index) {
-    debugger;
     var block = { type: '', status: 0 };
     block.type = type == 'intermediate' ? 'intermediate' : 'end';
     this.blocks.splice(index + 1, 0, block);
+    this.blocks[index].status = 0;
   }
 
   showButtons(index) {
