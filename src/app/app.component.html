@@ -1,15 +1,17 @@
 <div class="chart-page">
     <div class="cb-rectangle-box-group">
-        <div *ngFor="let block of blocks; let i = index;">
+        <ng-container *ngFor="let block of blocks; let i = index;">
             <div *ngIf="block.type=='start'" class="cb-circle-box"><span>Start</span></div>
             <div *ngIf="block.type=='intermediate'" class="cb-rectangle-box"><span>Intermediate</span></div>
             <div *ngIf="block.type=='end'" class="cb-circle-box"><span>End</span></div>
             <div *ngIf="block.type!='end'" class="cb-down-arrow">
                 <span></span>
+                <div class="plus-sign">
+                    <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==0" (click)="showButtons(i)">+</a>
+                    <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1" (click)="addBlock('intermediate',i)">[]</a>
+                    <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1 && i==blocks.length -1 && i>=1" (click)="addBlock('end',i)">O</a>
+                </div>
             </div>
-            <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==0" (click)="showButtons(i)">+</a>
-            <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1" (click)="addBlock('intermediate',i)">[]</a>
-            <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1 && i==blocks.length -1 && i>=1" (click)="addBlock('end',i)">O</a>
-        </div>
+        </ng-container>
     </div>
 </div>
