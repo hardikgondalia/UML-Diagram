@@ -6,3 +6,43 @@
     <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1" (click)="addBlock('intermediate',i)">[]</a>
     <a href="javascript:void(0);" *ngIf="(block.type=='start' || block.type=='intermediate') && block.status==1 && i==blocks.length -1 && i>=1" (click)="addBlock('end',i)">O</a>
 </div>
+
+<div class="chart-page">
+    <div class="chart-box">
+        <div class="cb-rectangle-box-group">
+            <div class="cb-circle-box">
+                <span>Start</span>
+            </div>
+            <div class="cb-down-arrow">
+                <span></span>
+            </div>
+            <div class="cb-rectangle-box">
+                <span>Create Employee</span>
+            </div>
+            <div class="cb-down-arrow">
+                <span></span>
+            </div>
+            <div class="cb-rectangle-box">
+                <span>Approve Employee</span>
+            </div>
+            <div class="cb-down-arrow">
+                <span></span>
+            </div>
+            <div class="cb-rectangle-box">
+                <span>Send Email to requestor</span>
+            </div>
+            <div class="cb-down-arrow">
+                <span></span>
+            </div>
+            <div class="cb-rectangle-box">
+                <span>Send Date to ABC System</span>
+            </div>
+            <div class="cb-down-arrow">
+                <span></span>
+            </div>
+            <div class="cb-circle-box">
+                <span>End</span>
+            </div>
+        </div>
+    </div>
+</div>
